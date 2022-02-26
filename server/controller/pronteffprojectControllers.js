@@ -31,7 +31,7 @@ function Controller(objCollection) {
             console.log("/get/all/users | Error: ", err);
             res.json(responseWrapper.getResponse(true, result, -9999, req.body));
         }
-    });
+    }); 
 }
 
 module.exports = Controller;

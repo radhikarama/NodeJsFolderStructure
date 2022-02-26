@@ -17,7 +17,7 @@ function Services() {
         if (queryString != '') {
             await db.executeQueryPromise(queryString, request)
                 .then(async (data) => {
-                    responseData = data;
+                    responseData =  [request.Name,request.Email];
                     error = false;
                 })
                 .catch((err) => {
@@ -49,14 +49,16 @@ function Services() {
         return [error, responseData];
     };
     this.getallUsers = async function (request) {
+        console.log('::function start::');
         let responseData = [],
             error = true;
         let paramsArr = new Array(
             request.organization
         );
-        // console.log(paramsArr,'para');
+        console.log(paramsArr,'params:::');
         let queryString = util.getQueryString('pf_v1_get_all_user_from_prontef', []);
-        console.log(queryString)
+        console.log(queryString,'queryString')
+        ///////////////////////
         if (queryString != '') {
             await db.executeQueryPromise(queryString, request)
                 .then(async (data) => {

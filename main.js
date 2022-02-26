@@ -4,6 +4,7 @@ var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
 app.use(bodyParser.json({ limit: '500kb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '500kb' }));
+
 const globalConfig = require('./server/services/utils/globalConfig')
 // const logger = require("./server/logger/winstonLogger");
 const dbWapper = require('./server/services/utils/dbWapper');
